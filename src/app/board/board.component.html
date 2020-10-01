@@ -1,0 +1,79 @@
+<div id="background">
+  <h1>Tic Tac Toe</h1>
+  <h3 style="text-align: center">Press the button to start the game</h3>
+
+  <div class="start-button d-flex justify-content-center">
+    <button
+      *ngIf="this.gameStatus == 0"
+      mat-raised-button
+      color="warn"
+      class="start-game"
+      (click)="gameStart()"
+    >
+      Start Game
+    </button>
+  </div>
+
+  <div id="game-window" class="container-fluid d-flex justify-content-center">
+    <div class="player-1 d-flex justify-content-start">
+      <p>Player 1: X</p>
+    </div>
+    <br />
+    <div *ngIf="this.gameStatus == 1" class="game-board">
+      <div class="row">
+        <div
+          (click)="getPosition($event)"
+          position="0"
+          class="cell col-4 my-auto"
+        ></div>
+        <div
+          (click)="getPosition($event)"
+          position="1"
+          class="cell col-4 my-auto"
+        ></div>
+        <div
+          (click)="getPosition($event)"
+          position="2"
+          class="cell col-4 my-auto"
+        ></div>
+      </div>
+      <div class="row">
+        <div
+          (click)="getPosition($event)"
+          position="3"
+          class="cell col-4 my-auto"
+        ></div>
+        <div
+          (click)="getPosition($event)"
+          position="4"
+          class="cell col-4 my-auto"
+        ></div>
+        <div
+          (click)="getPosition($event)"
+          position="5"
+          class="cell col-4 my-auto"
+        ></div>
+      </div>
+      <div class="row">
+        <div
+          (click)="getPosition($event)"
+          position="6"
+          class="cell col-4 my-auto"
+        ></div>
+        <div
+          (click)="getPosition($event)"
+          position="7"
+          class="cell col-4 my-auto"
+        ></div>
+        <div
+          (click)="getPosition($event)"
+          position="8"
+          class="cell col-4 my-auto"
+        ></div>
+      </div>
+    </div>
+    <div class="player-2 d-flex justify-content-end">
+      <p>Player 2: O</p>
+    </div>
+  </div>
+</div>
